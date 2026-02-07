@@ -77,6 +77,40 @@ See `.env.local.example` for full list.
 
 ---
 
+## Server & GitHub Konfiguration
+
+### Server-Zugang
+- **Server IP:** 10.22.23.69
+- **SSH User:** tobias
+- **Container:** vscode (VS Code Server)
+- **Development URL:** http://10.22.23.69:3000
+
+### GitHub Repository
+- **Repository:** https://github.com/369yoshino/My-first-AI-coded-app
+- **Branch:** main
+- **SSH Remote:** git@github.com:369yoshino/My-first-AI-coded-app.git
+
+### SSH Key (für GitHub)
+```
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILskFkzDXXFl1++A58NoUkSdq+skUOj+z2kRLQ35Exzi codeserver@openclaw
+```
+
+Dieser Key ist hinterlegt unter: https://github.com/settings/keys
+
+### Git Push Workflow
+```bash
+# SSH-Agent starten (falls nötig)
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+
+# Änderungen committen und pushen
+git add .
+git commit -m "Deine Commit Message"
+git push origin main
+```
+
+---
+
 ## Agent-Team Verantwortlichkeiten
 
 - **Requirements Engineer** (`.claude/agents/requirements-engineer.md`)
